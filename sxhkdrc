@@ -30,17 +30,18 @@ super + shift + p
 
 # brightness control
 XF86MonBrightness{Down,Up}
-    xbacklight -{dec,inc} 5
+    brightnessctl set 5%{-,+}
 ctrl + XF86MonBrightness{Down,Up}
-    xbacklight -{dec,inc} 1
+    brightnessctl set 1%{-,+}
 shift + XF86MonBrightness{Down,Up}
-    xbacklight -{dec,inc} 20
+    brightnessctl set 20%{-,+}
 super + XF86MonBrightnessDown
-    xbacklight -set 1
+    brightnessctl set 1
 
 # volume control
+#    pamixer {-d 5, -i 5, -t}
 XF86Audio{LowerVolume,RaiseVolume,Mute}
-    pamixer {-d 5, -i 5, -t}
+    amixer -D pulse sset Master {5%-, 5%+, 0%}
 
 # media control
 XF86Audio{Play,Prev,Next}
@@ -66,7 +67,7 @@ super + {_,shift + }q
 
 # toggle gaps
 super + g
-    case "$(bspc config window_gap)" in 0) bspc config window_gap 15 & bspc config border_width 3 ;; *) bspc config window_gap 0 & bspc config border_width 1 ;; esac
+    case "$(bspc config window_gap)" in 0) bspc config window_gap 45 & bspc config border_width 9 ;; *) bspc config window_gap 0 & bspc config border_width 9 ;; esac
 
 # alternate between the tiled and monocle layout
 super + f

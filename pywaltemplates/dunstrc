@@ -5,7 +5,7 @@
 
 [global]
     # Make the width 3740 (3840 - 100), have 50 left margin and 95 above
-    geometry = "300x5-25+25"
+    geometry = "600x5-75+75"
 
     transparency = 30
 
@@ -13,20 +13,20 @@
     separator_height = 0
 
     # Add vertical padding to the inside of the notification
-    padding = 12
+    padding = 36
 
     # Add horizontal padding for when the text gets long enough
-    horizontal_padding = 12
+    horizontal_padding = 36
 
     # The frame color and width of the notification
     frame_color = "{color1}"
-    frame_width = 3
+    frame_width = 9
 
     # How long a user needs to be idle for sticky notifications
     idle_threshold = 120
 
     # Font and typography settings
-    font = Fira code 14
+    font = Fira code 16
     alignment = center
     word_wrap = yes
 
